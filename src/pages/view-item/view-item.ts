@@ -16,20 +16,26 @@ import { Observable } from 'rxjs/Observable';
 })
 export class ViewItemPage {
 
-  item: any;
+  title;
+  description;
+  key;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public dataService: DataProvider) {
   }
 
   ionViewDidLoad() {
-    this.item = this.navParams.get('item');
-    console.log("get item ", this.item.title)
+    this.title = this.navParams.get('item').title;
+    this.description = this.navParams.get('item').description;
+    this.key = this.navParams.get('item').key;
+    console.log("get item ", this.title);
+    console.log("title: ", this.title);
+    console.log("description: ", this.description);
   }
 
   removeItem(key){
     console.log(key)
     if(key && typeof key !== 'undefined'){
-
+      this.dataService.removeItem(key);
     }
   }
   

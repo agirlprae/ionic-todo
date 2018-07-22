@@ -1,7 +1,7 @@
 <ion-header>
     <ion-navbar  >
       <ion-title>
-        {{item}} 
+        {{title}}
       </ion-title>
     </ion-navbar>
   </ion-header>
@@ -9,10 +9,10 @@
   <ion-content>
     <ion-card>
       <ion-card-content>
-        {{item}}
+        {{description}} 
       </ion-card-content>
     </ion-card>
 
-    <button full ion-button color="danger" (click)="removeItem(item.key)"><ion-icon ios="ios-trash" md="md-trash"> Delete</ion-icon></button>
+    <button full ion-button color="danger" (click)="removeItem(key)"><ion-icon ios="ios-trash" md="md-trash"> Delete</ion-icon></button>
   </ion-content>
  

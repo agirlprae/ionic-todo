@@ -12,11 +12,9 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: 'home.html'
 })
 export class HomePage { 
-  items:any ;
+  items: Observable<any[]>;
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public dataService: DataProvider) {
-    this.dataService.getData().subscribe(val => {
-      this.items = val;
-    })
+    this.items = this.dataService.getData()
     
   }
   
@@ -33,7 +31,7 @@ export class HomePage {
     this.dataService.save(item);
   }
   viewItem(item){
-      console.log(item)
+      console.log(item.title)
       this.navCtrl.push(ViewItemPage, {
         item: item
       });
