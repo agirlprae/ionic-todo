@@ -1,0 +1,18 @@
+<ion-header>
+    <ion-navbar  >
+      <ion-title>
+        {{item}} 
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-card>
+      <ion-card-content>
+        {{item}}
+      </ion-card-content>
+    </ion-card>
+
+    <button full ion-button color="danger" (click)="removeItem(item.key)"><ion-icon ios="ios-trash" md="md-trash"> Delete</ion-icon></button>
+  </ion-content>
+ 
